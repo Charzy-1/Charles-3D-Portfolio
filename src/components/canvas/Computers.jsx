@@ -9,12 +9,23 @@ const Computers = () => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor='black' />
+      <hemisphereLight intensity={3} groundColor='black' />
       <pointLight intensity={5} />
+      
+      {/* Updated spotlight with angle, penumbra, and target */}
+      <spotLight
+        position={[-20, 50, 10]}
+        angle={0.3}  // How wide the spotlight is
+        penumbra={1}  // Softness of the edge
+        intensity={1}  // Brightness of the light
+        castShadow
+        shadow-mapSize={1024}
+      />
+      
       <primitive
         object={computer.scene}
         scale={[1, 1, 1]}  // Adjust scale
-        position={[0, -5.25, -1.5]}  // Adjust position
+        position={[-5, -5.25, -1.5]}  // Adjust position
         rotation={[-0.01, -0.2, -0.1]} 
       />
     </mesh>
