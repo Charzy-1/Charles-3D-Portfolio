@@ -5,29 +5,29 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import CanvasLoader from '../Loader';
 
 const Computers = () => {
-const computer = useGLTF('./desktop_pc/scene.gltf')
+  const computer = useGLTF('./desktop_pc/scene.gltf');
 
   return (
     <mesh>
       <hemisphereLight intensity={0.15} groundColor='black' />
-      <pointLight intensity={1} />
+      <pointLight intensity={5} />
       <primitive
-         object={computer.scene}
-         scale={[1, 1, 1]}  // Try increasing if too small
-         position={[0, -1.5, 0]}  // Adjust this to bring the model into view
-         rotation={[-0.01, -0.2, -0.1]}  // Adjust rotation if needed
-       />
+        object={computer.scene}
+        scale={[1, 1, 1]}  // Adjust scale
+        position={[0, -5.25, -1.5]}  // Adjust position
+        rotation={[-0.01, -0.2, -0.1]} 
+      />
     </mesh>
-  )
-}
+  );
+};
 
 const ComputersCanvas = () => {
-  
-    return (
+  return (
+    <div className="absolute inset-0 z-10"> {/* Adjusted z-index */}
       <Canvas 
         frameloop='demand'
         shadows
-        camera={{ position: [20, 3, 5], fov:25 }}
+        camera={{ position: [20, 3, 5], fov: 25 }}
         gl={{ preserveDrawingBuffer: true }}
       >
         <Suspense fallback={<CanvasLoader />}>
@@ -38,10 +38,10 @@ const ComputersCanvas = () => {
           />
           <Computers />
         </Suspense>
-
         <Preload all />
       </Canvas>
-    )
-  }
+    </div>
+  );
+};
 
-export default Computers
+export default ComputersCanvas;
