@@ -22,7 +22,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
+          <img src={logo} alt='company logo' className='w-9 h-9 object-contain' loading='lazy' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex'>Charzy &nbsp; <span className='sm:block hidden'> | Charles Adikankwu</span></p>
         </Link>
         <ul className='list-none hidden sm:flex flex-row gap-10'>
