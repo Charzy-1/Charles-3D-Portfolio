@@ -9,23 +9,25 @@ const Computers = () => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={3} groundColor='black' />
+      {/* Ambient Hemisphere Light */}
+      <hemisphereLight intensity={5} groundColor='black' />
+
+      {/* Point Light for Direct Illumination */}
       <pointLight intensity={5} />
-      
-      {/* Updated spotlight with angle, penumbra, and target */}
-      <spotLight
-        position={[-20, 50, 10]}
-        angle={0.3}  // How wide the spotlight is
-        penumbra={1}  // Softness of the edge
-        intensity={1}  // Brightness of the light
-        castShadow
-        shadow-mapSize={1024}
+
+       {/* Directional Light for Shadows */}
+       <directionalLight 
+        intensity={0.5} 
+        position={[0, 10, 5]} 
+        castShadow 
+        shadow-mapSize-width={1024} 
+        shadow-mapSize-height={1024} 
       />
-      
+
       <primitive
         object={computer.scene}
-        scale={[1, 1, 1]}  // Adjust scale
-        position={[-5, -5.25, -1.5]}  // Adjust position
+        scale={[0.8, 0.8, 0.8]}  // Adjust scale
+        position={[0, -4.1, -1.5]}  // Adjust position
         rotation={[-0.01, -0.2, -0.1]} 
       />
     </mesh>
@@ -34,11 +36,12 @@ const Computers = () => {
 
 const ComputersCanvas = () => {
   return (
-    <div className="absolute inset-0 z-10"> {/* Adjusted z-index */}
+    <div className="absolute inset-0"> {/* Adjusted z-index */}
       <Canvas 
         frameloop='demand'
         shadows
         camera={{ position: [20, 3, 5], fov: 25 }}
+        // camera={{ position: [30, 5, 10], fov: 40 }} 
         gl={{ preserveDrawingBuffer: true }}
       >
         <Suspense fallback={<CanvasLoader />}>
