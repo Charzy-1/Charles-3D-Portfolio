@@ -27,7 +27,7 @@ const Computers = ({ isMobile }) => {
       <primitive
         object={computer.scene}
         scale={isMobile ? [0.5, 0.5, 0.5] : [0.8, 0.8, 0.8]}  // Adjust scale for mobile
-        position={isMobile ? [0, -3.05, -1.5] : [0, -4.1, -1.5]}  // Adjust position for mobile
+        position={isMobile ? [0, -3.05, -1.5] : [0, -3.8, -1.5]}  // Adjust position for mobile
         rotation={[-0.01, -0.2, -0.1]} 
       />
     </mesh>
@@ -59,7 +59,7 @@ const ComputersCanvas = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0">
+    <div className="absolute inset-0 z-10">
       <Canvas 
         frameloop='demand'
         shadows

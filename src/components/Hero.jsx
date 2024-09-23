@@ -5,7 +5,7 @@ import { ComputersCanvas } from './canvas';
 
 const Hero = () => {
   return (
-    <section className='relative w-full h-screen mx-auto'>
+    <section className='relative w-full h-screen mx-auto mb-16'>
         {/* Background Canvas */}
         <ComputersCanvas />
 
@@ -23,7 +23,7 @@ const Hero = () => {
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I'm <span className='text-[#915eff]'>Charles</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+          <p className={`${styles.heroSubText} mt-1 text-white-100`}>
           I specialize in creating immersive 3D user interfaces and building dynamic, high-performance web applications.
           </p>
         </div>
@@ -31,7 +31,7 @@ const Hero = () => {
   
       <ComputersCanvas />
 
-      <div className='absolute xs:bottom-[-65px] bottom-10 w-full flex justify-center items-center'>
+      <div className='absolute xs:bottom-[-45px] bottom-5 w-full flex justify-center items-center z-50'>
         <a href='#about'>
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items0start p-2'>
           <motion.div
