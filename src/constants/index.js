@@ -1,7 +1,7 @@
 import {
     mobile,
     backend,
-    creator,
+    grafiks,
     web,
     javascript,
     typescript,
@@ -10,11 +10,8 @@ import {
     reactjs,
     redux,
     tailwind,
-    nodejs,
-    mongodb,
     git,
     figma,
-    docker,
     meta,
     starbucks,
     tesla,
@@ -54,8 +51,8 @@ import {
       icon: backend,
     },
     {
-      title: "Content Creator",
-      icon: creator,
+      title: "Graphics Designer",
+      icon: grafiks,
     },
   ];
   
@@ -89,14 +86,6 @@ import {
       icon: tailwind,
     },
     {
-      name: "Node JS",
-      icon: nodejs,
-    },
-    {
-      name: "MongoDB",
-      icon: mongodb,
-    },
-    {
       name: "Three JS",
       icon: threejs,
     },
@@ -107,10 +96,6 @@ import {
     {
       name: "figma",
       icon: figma,
-    },
-    {
-      name: "docker",
-      icon: docker,
     },
   ];
   
