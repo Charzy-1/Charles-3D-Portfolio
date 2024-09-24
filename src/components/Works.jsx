@@ -7,6 +7,14 @@ import { github } from '../assets';
 import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 
+const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
+  return (
+    <motion.div>
+      test
+    </motion.div>
+  )
+}
+
 const Works = () => {
   return (
     <>
