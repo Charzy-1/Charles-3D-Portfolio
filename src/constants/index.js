@@ -199,6 +199,7 @@ import {
       ],
       image: carrent,
       source_code_link: "https://github.com/Charzy-1/React-capstone-project",
+      live_demo_link: 'https://66e493a11d296b6c9784521d--leosex.netlify.app/',
     },
     {
       name: "SpaceX-Mission-App",
@@ -220,6 +221,7 @@ import {
       ],
       image: jobit,
       source_code_link: "https://github.com/Charzy-1/SpaceX-Mission-App",
+      live_demo_link: 'https://spacexmission-app.netlify.app/',
     },
     {
       name: "HFM Market promotion",
@@ -237,6 +239,7 @@ import {
       ],
       image: tripguide,
       source_code_link: "https://github.com/Charzy-1/HTML-CSS-JavaScript-capstone-project?tab=readme-ov-file",
+      live_demo_link: 'https://charzy-1.github.io/HTML-CSS-JavaScript-capstone-project/',
     },
   ];
   

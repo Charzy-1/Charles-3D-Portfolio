@@ -6,9 +6,8 @@ import { styles } from '../styles';
 import { github } from '../assets';
 import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
-import { p } from 'framer-motion/client';
 
-const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
+const ProjectCard = ({ index, name, description, tags, image, source_code_link, live_demo_link }) => {
   return (
     <motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75 )}>
       <Tilt
@@ -28,19 +27,16 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
           </div>
 
           <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
-            <div onClick={() => window.open
-              (source_code_link, '_blank')}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-              >
+            <div onClick={() => window.open(source_code_link, '_blank')}
+              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'>
                 <img 
                   src={github}
                   alt="github"
-                  className='w-1/2 h-1/2
-                  object: contain' 
-                  />
+                  className='w-1/2 h-1/2 object-contain' 
+                />
             </div>
           </div>
-          
+
           <div className='mt-5'>
               <h3 className='text-white font-bold text-[24px]'>{name}</h3>
               <h3 className='mt-2 text-secondary text-[14px]'>{description}</h3>
@@ -52,6 +48,15 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
                     #{tag.name}
                 </p>
               ))}
+          </div>
+
+          {/* Add a red gradient button for the live demo */}
+          <div className="absolute bottom-3 right-3">
+            <button 
+              onClick={() => window.open(live_demo_link, '_blank')}
+              className="bg-[#915eff] text-white px-4 py-2 rounded-lg">
+              live demo
+            </button>
           </div>
 
       </Tilt>
