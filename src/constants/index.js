@@ -224,7 +224,7 @@ import {
     {
       name: "HFM Market promotion",
       description:
-        "This is a capstone project designed to flex my muscle in using CSS for better user experience. It is a webpage designed to publicize an online trading seminar organized in Lagos, Nigeria. It was completed with just html and CSS.",
+        "Project designed to flex my muscle in using CSS for better user experience. It is a webpage designed to publicize an online trading seminar organized in Lagos, Nigeria. It was completed with just html and CSS.",
       tags: [
         {
           name: "HTML",
