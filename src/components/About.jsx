@@ -1,5 +1,5 @@
-import React from 'react'
-import { Tilt } from 'react-tilt'
+import React from 'react';
+import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 import { SectionWrapper } from '../hoc';
 
@@ -32,7 +32,7 @@ const ServiceCard = ({ index, title, icon }) => {
         </div>
       </motion.div>
     </Tilt>
-  )
+  );
 }
 
 // Main About component
@@ -50,13 +50,14 @@ const About = () => {
         I'm a dynamic software developer with knowledge of frameworks like React, NextJS, and ThreeJS. I have experience with Typescript and JavaScript. I work directly with clients to develop effective, scalable, and user-friendly solutions that address challenges in the real world. I'm a quick learner. Together, let's make your ideas a reality!
       </motion.p>
 
-      <div className='mt-20 flex flex-wrap gap-10'>
+      {/* Centering container for service cards */}
+      <div className='mt-20 flex flex-wrap justify-center items-center gap-10'>
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
     </>
-  )
+  );
 }
 
-export default SectionWrapper(About, 'about')
+export default SectionWrapper(About, 'about');
