@@ -22,7 +22,7 @@ import threejs from "./tech/threejs.svg";
 import chill from "./company/chill.png";
 
 import carrent from "./carrent.png";
-import calculator from "./calulator.png";
+import calculator from "./calculator.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
