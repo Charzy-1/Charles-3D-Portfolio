@@ -3,26 +3,27 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 
 import CanvasLoader from '../Loader';
-import { ShadowMesh } from 'three/examples/jsm/Addons.js';
-
 
 const Earth = () => {
-  const earth = useGLTF('./planet/scene.gltf')
+  const earth = useGLTF('./planet/scene.gltf');
 
   return (
     <primitive
       object={earth.scene}
+      scale={2.5}
+      position-y={0}
+      rotation-y={0}
     />
-  )
-}
+  );
+};
 
 const EarthCanvas = () => {
   return (
     <Canvas
       shadows
-      frameloop='demand'
+      frameloop="demand"
       gl={{ preserveDrawingBuffer: true }}
-      camera={{ }}
+      camera={{  near:0.1, position: [-4, 3, 6], fov: 45 }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
@@ -31,11 +32,11 @@ const EarthCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-
         <Earth />
+        <Preload all />
       </Suspense>
     </Canvas>
-  )
-}
+  );
+};
 
-export default EarthCanvas
+export default EarthCanvas;
