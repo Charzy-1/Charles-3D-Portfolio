@@ -246,6 +246,28 @@ const projects = [
     source_code_link: "https://github.com/Charzy-1/Math-wizard-app",
     live_demo_link: 'https://66c72eb234e70410b003a82e--benevolent-alfajores-7f3c32.netlify.app/',
   },
+  {
+    name: "HFM Market promotions",
+    description:
+      "This project designed to flex my muscle in using CSS for better user experience. It is a webpage designed to publicize an online trading seminar organized in Lagos, Nigeria. It was completed with just html and CSS.",
+    tags: [
+      {
+        name: "HTML",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "HTML",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: tripguide,
+    source_code_link: "https://github.com/Charzy-1/HTML-CSS-JavaScript-capstone-project",
+    live_demo_link: 'https://charzy-1.github.io/HTML-CSS-JavaScript-capstone-project/',
+  },
 ];
 
 export { services, technologies, experiences, testimonials, projects };
