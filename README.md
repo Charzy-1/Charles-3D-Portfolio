@@ -75,7 +75,7 @@ Give a ⭐️ if you like this project!
 - Chill Academy
 - React, Redux and React Router documentation
 - Jest Documentation for Testing.
-- Credits to the original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
