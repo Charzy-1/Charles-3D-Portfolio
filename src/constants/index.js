@@ -224,22 +224,26 @@ import {
       live_demo_link: 'https://spacexmission-app.netlify.app/',
     },
     {
-      name: "HFM Market promotion",
+      name: "Math Wizard",
       description:
-        "Project designed to flex my muscle in using CSS for better user experience. It is a webpage designed to publicize an online trading seminar organized in Lagos, Nigeria. It was completed with just html and CSS.",
+        "Math-Wizard is a web app for all lovers of mathematics. It is a Single Page Application (SPA) that allows users to make simple calculations and read a random math-related quotes.",
       tags: [
         {
-          name: "HTML",
+          name: "react",
           color: "blue-text-gradient",
         },
         {
-          name: "css",
+          name: "restapi",
+          color: "green-text-gradient",
+        },
+        {
+          name: "tailwind",
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
-      source_code_link: "https://github.com/Charzy-1/HTML-CSS-JavaScript-capstone-project?tab=readme-ov-file",
-      live_demo_link: 'https://charzy-1.github.io/HTML-CSS-JavaScript-capstone-project/',
+      image: carrent,
+      source_code_link: "https://github.com/Charzy-1/React-capstone-project",
+      live_demo_link: 'https://66c72eb234e70410b003a82e--benevolent-alfajores-7f3c32.netlify.app/',
     },
   ];
   
