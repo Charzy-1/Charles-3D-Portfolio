@@ -14,6 +14,7 @@ import {
     figma,
     chill,
     carrent,
+    calculator,
     jobit,
     tripguide,
     threejs,
@@ -242,7 +243,7 @@ import {
         },
       ],
       image: carrent,
-      source_code_link: "https://github.com/Charzy-1/React-capstone-project",
+      source_code_link: "https://github.com/Charzy-1/Math-wizard-app",
       live_demo_link: 'https://66c72eb234e70410b003a82e--benevolent-alfajores-7f3c32.netlify.app/',
     },
   ];
