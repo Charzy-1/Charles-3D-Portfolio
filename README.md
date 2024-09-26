@@ -32,7 +32,7 @@ You can access the live version [here](#).
 
 ## Project screenshot.
 
-![screenshot](/public/images/Screenshot.jpeg)
+![screenshot](./public/images/Screenshot.jpg)
 
 ## Setup
 
