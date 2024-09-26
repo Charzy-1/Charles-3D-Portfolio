@@ -18,55 +18,82 @@ const Contact = () => {
     message: '',
   });
 
+  // State for managing validation errors
+  const [errors, setErrors] = useState({});
+
   // State to track loading state during form submission
   const [loading, setLoading] = useState(false);
 
   // Handle input change for all form fields
   const handleChange = (e) => {
-    const { name, value } = e.target; // Destructure name and value from the event target
-    setForm({ ...form, [name]: value }); // Dynamically update the form state
-  }
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+
+  // Validate form fields
+  const validateForm = () => {
+    const newErrors = {};
+    if (!form.name) newErrors.name = 'Name is required';
+    if (!form.email) newErrors.email = 'Email is required';
+    if (!form.message) newErrors.message = 'Message is required';
+    
+    // Email format validation (basic)
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (form.email && !emailPattern.test(form.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    
+    return newErrors;
+  };
 
   // Handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
-    setLoading(true); // Set loading state to true when submitting
+    e.preventDefault();
+    
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return; // Stop form submission if there are validation errors
+    }
 
+    setLoading(true);
+    
     // EmailJS send method for sending email with the provided form data
     emailjs.send(
-      'service_yxudmck', // EmailJS service ID
-      'template_9qa1wca', // EmailJS template ID
+      'service_yxudmck',
+      'template_9qa1wca',
       {
-        from_name: form.name, // Sender's name from the form input
-        to_name: 'Charles',   // Your name (recipient)
-        from_email: form.email, // Sender's email from the form input
-        to_email: 'charlesadiks@gmail.com', // Your email (recipient)
-        message: form.message,  // Message from the form input
+        from_name: form.name,
+        to_name: 'Charles',
+        from_email: form.email,
+        to_email: 'charlesadiks@gmail.com',
+        message: form.message,
       },
-      '0doGALnr-Fx0KSo2M' // Your EmailJS public API key
+      '0doGALnr-Fx0KSo2M'
     )
     .then(() => {
-      setLoading(false); // Reset loading state after success
+      setLoading(false);
       alert('Thank you. I will get back to you shortly.');
-
+      
       // Reset form fields after successful submission
       setForm({
         name: '',
         email: '',
         message: '',
       });
+      setErrors({}); // Clear errors after successful submission
     })
     .catch((error) => {
-      setLoading(false); // Reset loading state in case of error
-      console.log(error); // Log the error for debugging
+      setLoading(false);
+      console.log(error);
       alert('Something went wrong. Please try again later.');
     });
-  }
+  };
 
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div 
-        variants={slideIn('left', 'tween', 0.2, 1)} // Slide-in animation for the contact form
+        variants={slideIn('left', 'tween', 0.2, 1)} 
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>Hire me</p>
@@ -74,7 +101,7 @@ const Contact = () => {
 
         <form 
           ref={formRef}
-          onSubmit={handleSubmit} // Attach the form submit handler
+          onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
         >
           {/* Name input field */}
@@ -88,6 +115,7 @@ const Contact = () => {
               placeholder="Enter your name" 
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
+            {errors.name && <span className="text-red-500 text-sm mt-2">{errors.name}</span>}
           </label>
 
           {/* Email input field */}
@@ -101,6 +129,7 @@ const Contact = () => {
               placeholder="Enter your email" 
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
+            {errors.email && <span className="text-red-500 text-sm mt-2">{errors.email}</span>}
           </label>
 
           {/* Message input field */}
@@ -114,6 +143,7 @@ const Contact = () => {
               placeholder="Tell me something..." 
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
+            {errors.message && <span className="text-red-500 text-sm mt-2">{errors.message}</span>}
           </label>
 
           {/* Submit button */}
@@ -121,19 +151,19 @@ const Contact = () => {
             type="submit" 
             className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
           >
-            {loading ? 'Sending...' : 'Send'} {/* Show 'Sending...' text while loading */}
+            {loading ? 'Sending...' : 'Send'}
           </button>
         </form>
       </motion.div>
 
       <motion.div
-        variants={slideIn('right', 'tween', 0.2, 1)} // Slide-in animation for the Earth canvas
+        variants={slideIn('right', 'tween', 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
         <EarthCanvas />
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
 export default SectionWrapper(Contact, 'contact');
