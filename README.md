@@ -28,7 +28,7 @@ This portfolio site is designed to highlight my expertise in software developmen
 
 ## Live version
 
-Have a look at the live version here [here](https://charlesadikankwu.netlify.app/)
+Have a look at the live version here [here](https://charlesadikankwu.netlify.app/).
 
 ## Project screenshot.
 
