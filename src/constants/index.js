@@ -16,6 +16,7 @@ import {
   carrent,
   calculator,
   jobit,
+  crypto,
   tripguide,
   threejs,
 } from "../assets";
@@ -181,6 +182,28 @@ const testimonials = [
 
 const projects = [
   {
+    name: "Crypto exchange platform",
+    description:
+      "This crypto exchange platform is designed to facilitate the buying, selling, and exchanging of various cryptocurrencies. Users can view real-time prices, access trading features, and manage their accounts seamlessly. The platform is fully responsive and works seamlessly across all devices, from desktops to mobile phones.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "restapi",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: crypto,
+    source_code_link: "https://github.com/Charzy-1/Crypto-exchange-platform",
+    live_demo_link: 'https://leosexchange.netlify.app',
+  },
+  {
     name: "Crypto market tracker",
     description:
       "Web-based platform that allows users to fetch data from coinllore crypto API, lists the metrics by coin name and displays additional information when clicked on a coin link.",
@@ -254,10 +277,6 @@ const projects = [
       {
         name: "HTML",
         color: "blue-text-gradient",
-      },
-      {
-        name: "HTML",
-        color: "green-text-gradient",
       },
       {
         name: "css",
