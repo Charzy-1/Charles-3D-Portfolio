@@ -25,6 +25,7 @@ import carrent from "./carrent.png";
 import calculator from "./calculator.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import crypto from "./crypto.png";
 
 export {
   logo,
@@ -50,5 +51,6 @@ export {
   calculator,
   carrent,
   jobit,
+  crypto,
   tripguide,
 };
